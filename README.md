@@ -1,11 +1,15 @@
+A pawn can move on 10x10 chequerboard horizontally, vertically and diagonally by these rules:
+1. 3 tiles moving North (N), West (W), South (S) and East (E)
+2. 2 tiles moving NE, SE, SW and NW
+3. Moves are only allowed if the ending tile exists on the board
+4. Starting from initial position, the pawn can visit each tile only once
+
 ### 1. Solution Approach:
 
 I have Followed the Warnsdorff’s Algorithm approach to solve the problem.
 
 1. Build the 10*10 Board with unvisited(-1)
-2. prepare all possible patterns
-       row_pattern = [3, 2, 0, -2, -3, -2, 0, 2] 
-       col_pattern  = [0, -2, -3, -2, 0, 2, 3, 2]
+2. Prepare all possible patterns row_pattern = [3, 2, 0, -2, -3, -2, 0, 2], col_pattern  = [0, -2, -3, -2, 0, 2, 3, 2]
 3. Pawn can start from any valid position on the board.  
 4. By using the above pattern. get the unvisited(-1) tile with minimal degree from the current position
 5. Once find the next position, update the position in board as visited.  
